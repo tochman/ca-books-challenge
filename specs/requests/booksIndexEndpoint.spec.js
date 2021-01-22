@@ -37,7 +37,7 @@ describe('GET /books', () => {
           author: 'T. Ochman'
         }
       ]
-    }
+    }  
     expect(response.body)
       .to.eql(expectedResponse)
 

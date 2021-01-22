@@ -5,11 +5,11 @@ const booksController = {
     const collection = {
       books: [
         {
-          title: 'Fun With cool guy',
+          title: 'Fun With Node',
           author: 'T. Ochman'
         },
         {
-          title: 'We are all in this together',
+          title: 'Fun With Node Part II',
           author: 'T. Ochman'
         }
       ]
@@ -22,4 +22,3 @@ const booksController = {
 }
 
 module.exports = booksController
-hi
