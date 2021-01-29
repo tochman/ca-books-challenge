@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon --inspect ./bin/www",
-    "test": "mocha --recursive --exit specs/requests"
+    "test": "NODE_ENV=test NODE_NO_WARNINGS=1 mocha --recursive --exit specs/requests"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,7 +12,8 @@
     "express": "~4.13.1",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.4.0"
+    "sequelize": "^6.4.0",
+    "sequelize-to-json": "^0.10.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",

@@ -29,15 +29,15 @@ describe('GET /books', () => {
     const expectedResponse = {
       books: [
         {
-          title: 'Fun With Node',
-          author: 'T. Ochman'
+          title: 'Learn NodeJS with Thomas',
+          author: { name: 'Thomas Ochman'}
         },
         {
-          title: 'Fun With Node Part II',
-          author: 'T. Ochman'
+          title: 'Learn Sequelize with Thomas',
+          author: { name: 'Thomas Ochman'}
         }
       ]
-    }  
+    }
     expect(response.body)
       .to.eql(expectedResponse)
 

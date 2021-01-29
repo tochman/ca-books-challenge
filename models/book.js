@@ -2,15 +2,15 @@
 const {
   Model
 } = require('sequelize');
+const Serializer = require('sequelize-to-json')
+
 module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      models.Book.belongsTo(models.Author, {
+        foreignKey: 'AuthorId',
+        as: 'author',
+        foreignKeyConstraint: true })
     }
   };
   Book.init({
@@ -19,5 +19,14 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Book',
   });
+
+  Book.scheme = () => {
+    return {
+      include: ['@all', 'author'],
+      assoc: {
+        author: { include: ['@all']}
+      }
+    }
+  }
   return Book;
 };
